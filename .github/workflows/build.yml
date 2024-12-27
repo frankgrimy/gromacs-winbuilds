@@ -72,7 +72,7 @@ jobs:
     - name: Configure GROMACS
       run: |
         cd gromacs-$ENV:GROMACS_VERSION
-        cmake -P .github/scripts/configure.cmake
+        cmake -P ../.github/scripts/configure.cmake
 
 
     # - name: Build GROMACS
