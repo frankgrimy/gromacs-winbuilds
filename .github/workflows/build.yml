@@ -56,5 +56,5 @@ jobs:
     - name: Download GROMACS source code
       run: |
         curl https://ftp.gromacs.org/gromacs/gromacs-$ENV:GROMACS_VERSION.tar.gz -o gromacs-$ENV:GROMACS_VERSION.tar.gz
-        #Expand-Archive -Path gromacs-${GROMACS_VERSION}.tar.gz -DestinationPath gromacs-${GROMACS_VERSION}
+        tar -xzf gromacs-$ENV:GROMACS_VERSION.tar.gz -C gromacs-$ENV:GROMACS_VERSION
         dir ./
