@@ -63,7 +63,7 @@ jobs:
     - name: Download FFTW
       run: |
         curl https://fftw.org/pub/fftw/fftw-$ENV:FFTW_VERSION-dll64.zip -o fftw-$ENV:FFTW_VERSION-dll64.zip
-        Expand-Archive -Path fftw-$ENV:FFTW_VERSION-dll64.zip -DestinationPath .
+        Expand-Archive -Path fftw-$ENV:FFTW_VERSION-dll64.zip -DestinationPath ./fftw-$ENV:FFTW_VERSION-dll64
         dir ./
         cd fftw-$ENV:FFTW_VERSION-dll64
         dir "C:/Program Files (x86)/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/"
