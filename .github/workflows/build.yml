@@ -68,3 +68,14 @@ jobs:
         & "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe" /machine:x64 /def:libfftw3f-3.def
         dir ./
         cd ..
+
+    - name: Configure GROMACS
+      run: |
+        cmake -G Ninja -S . -B ./build -DGMX_GPU=$ENV:GPU_VAR -DGMX_SIMD=AVX2_256 -DGMX_FFT_LIBRARY=fftw3 -DCMAKE_BUILD_TYPE=$ENV:BUILD_TYPE -DBUILD_SHARED_LIBS=off -DFFTWF_INCLUDE_DIR="./fftw-3.3.5-dll64" -DFFTWF_LIBRARY="./fftw-3.3.5-dll64/libfftw3f-3.lib"
+        dir build
+
+    - name: Build GROMACS
+      run: |
+        cd build
+        ninja
+        dir ./
