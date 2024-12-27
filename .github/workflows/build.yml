@@ -44,7 +44,7 @@ jobs:
     - name: cache cache files
       uses: actions/cache@v4
       with:
-        path:".ccache"
+        path: ".ccache"
         key: ${{ matrix.config.name }}-ccache-${{ github.sha }}
         restore-keys: |
           ${{ matrix.config.name }}-ccache-
