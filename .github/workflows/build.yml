@@ -38,6 +38,10 @@ jobs:
       ENVIRONMENT_SCRIPT: ${{ matrix.config.environment_script }}
 
     steps:
+    - uses: actions/checkout@v4
+      with:
+        show-progress: false
+
     - name: Download Ninja, CMake, and CCache
       run: cmake -P .github/scripts/download-ninja-cmake.cmake
 
