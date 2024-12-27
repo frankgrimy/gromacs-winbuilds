@@ -36,6 +36,7 @@ jobs:
       GPU_VAR: ${{ matrix.config.gpu_var }}
       ENVIRONMENT_SCRIPT: ${{ matrix.config.environment_script }}
       GROMACS_VERSION: "2024.4"
+      FFTW_VERSION: "3.3.5"
 
     steps:
     - uses: actions/checkout@v4
@@ -58,3 +59,12 @@ jobs:
         curl https://ftp.gromacs.org/gromacs/gromacs-$ENV:GROMACS_VERSION.tar.gz -o gromacs-$ENV:GROMACS_VERSION.tar.gz
         tar -zxf gromacs-$ENV:GROMACS_VERSION.tar.gz
         dir ./
+
+    - name: Download FFTW
+      run: |
+        curl https://fftw.org/pub/fftw/fftw-$ENV:FFTW_VERSION-dll64.zip -o fftw-$ENV:FFTW_VERSION-dll64.zip
+        Expand-Archive -Path fftw-$ENV:FFTW_VERSION-dll64.zip -DestinationPath .
+        dir ./
+        cd fftw-$ENV:FFTW_VERSION-dll64
+        dir "C:/Program Files (x86)/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/"
+        #& "C:/Program Files (x86)/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe" /machine:x64 /def:libfftw3f-3.def
