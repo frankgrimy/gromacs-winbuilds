@@ -72,8 +72,9 @@ jobs:
     - name: Configure GROMACS
       run: |
         cd gromacs-$ENV:GROMACS_VERSION
-        & $ENV:ENVIRONMENT_SCRIPT && set CC=$ENV:CC && set CXX=$ENV:CXX && cmake -G Ninja -S . -B ./build -DGMX_GPU=$ENV:GPU_VAR -DGMX_SIMD=AVX2_256 -DGMX_FFT_LIBRARY=fftw3 -DCMAKE_BUILD_TYPE=$ENV:BUILD_TYPE -DBUILD_SHARED_LIBS=off -DFFTWF_INCLUDE_DIR="./fftw-3.3.5-dll64" -DFFTWF_LIBRARY="./fftw-3.3.5-dll64/libfftw3f-3.lib"
-        dir build
+        cmd.exe
+        # & $ENV:ENVIRONMENT_SCRIPT && set CC=$ENV:CC && set CXX=$ENV:CXX && cmake -G Ninja -S . -B ./build -DGMX_GPU=$ENV:GPU_VAR -DGMX_SIMD=AVX2_256 -DGMX_FFT_LIBRARY=fftw3 -DCMAKE_BUILD_TYPE=$ENV:BUILD_TYPE -DBUILD_SHARED_LIBS=off -DFFTWF_INCLUDE_DIR="./fftw-3.3.5-dll64" -DFFTWF_LIBRARY="./fftw-3.3.5-dll64/libfftw3f-3.lib"
+        # dir build
 
     # - name: Build GROMACS
     #   run: |
