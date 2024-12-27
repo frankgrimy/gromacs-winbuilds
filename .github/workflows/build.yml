@@ -72,7 +72,8 @@ jobs:
     - name: Configure GROMACS
       run: |
         cd gromacs-$ENV:GROMACS_VERSION
-        cmd.exe /c $ENV:ENVIRONMENT_SCRIPT & set CC=cl & set CXX=cl
+        cmd.exe
+        set CC=cl & set CXX=cl
 
 
     # - name: Build GROMACS
