@@ -58,4 +58,4 @@ jobs:
       run: |
         curl -o gromacs-${GROMACS_VERSION}.tar.gz https://ftp.gromacs.org/gromacs/gromacs-${GROMACS_VERSION}.tar.gz
         Expand-Archive -Path gromacs-${GROMACS_VERSION}.tar.gz -DestinationPath gromacs-${GROMACS_VERSION}
-        dir
+        dir ./
