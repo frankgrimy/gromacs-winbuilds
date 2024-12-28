@@ -65,7 +65,7 @@ execute_process(
     -D GMX_DEFAULT_SUFFIX=OFF
     -D GMX_GPU=$ENV{GPU_VAR}
     -D GMX_SIMD=None
-    -D GMX_FFT_LIBRARY=FFTW3F
+    -D GMX_FFT_LIBRARY=FFTW3
     -D FFTWF_INCLUDE_DIR="./fftw-3.3.5/"
     -D FFTWF_LIBRARY="./fftw-3.3.5/libfftw3f-3.lib"
     -D GMX_OPENMP=$ENV{OPENMP_VAR}
