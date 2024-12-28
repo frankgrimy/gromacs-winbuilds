@@ -66,8 +66,8 @@ execute_process(
     -D GMX_GPU=$ENV{GPU_VAR}
     -D GMX_SIMD=None
     -D GMX_FFT_LIBRARY=FFTW3
-    -D FFTWF_INCLUDE_DIR="fftw-3.3.5/"
-    -D FFTWF_LIBRARY="fftw-3.3.5/libfftw3f-3.lib"
+    -D FFTWF_INCLUDE_DIR=fftw-3.3.5/
+    -D FFTWF_LIBRARY=fftw-3.3.5/libfftw3f-3.lib
     -D GMX_OPENMP=$ENV{OPENMP_VAR}
     -D REGRESSIONTEST_DOWNLOAD=ON
   RESULT_VARIABLE result
