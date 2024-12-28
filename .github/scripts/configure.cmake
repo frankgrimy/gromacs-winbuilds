@@ -65,7 +65,9 @@ execute_process(
     -D GMX_DEFAULT_SUFFIX=OFF
     -D GMX_GPU=$ENV{GPU_VAR}
     -D GMX_SIMD=None
-    -D GMX_FFT_LIBRARY=FFTPACK
+    -D GMX_FFT_LIBRARY=FFTW3F
+    -D FFTWF_INCLUDE_DIR="./fftw-3.3.5/"
+    -D FFTWF_LIBRARY="./fftw-3.3.5/libfftw3f-3.lib"
     -D GMX_OPENMP=$ENV{OPENMP_VAR}
     -D REGRESSIONTEST_DOWNLOAD=ON
   RESULT_VARIABLE result
@@ -73,3 +75,5 @@ execute_process(
 if (NOT result EQUAL 0)
   message(FATAL_ERROR "Bad exit status")
 endif()
+
+#-D GMX_FFT_LIBRARY=FFTPACK
